@@ -47,6 +47,8 @@ $warm-grey: #999999;
 $pale-grey: #e1e4e8;
 
 .listRepos {
+  width: 100%;
+  animation: slide-right 0.7s ease;
   .listRepos__item {
     padding: 20px 30px;
     color: $warm-grey;
@@ -60,6 +62,9 @@ $pale-grey: #e1e4e8;
       font-weight: 700;
       text-decoration: none;
     }
+    .listRepos__item--description {
+      word-break: break-word;
+    }
     .listRepos__item--languageAndForks {
       display: flex;
       align-items: center;
@@ -69,7 +74,7 @@ $pale-grey: #e1e4e8;
         font-family: monospace;
       }
       p {
-        padding-left: 5px;
+        padding-left: 7px;
         font-size: 14px;
       }
       img {
@@ -85,6 +90,17 @@ $pale-grey: #e1e4e8;
   }
   .listRepos__item:last-child {
     border-bottom: none;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 </style>

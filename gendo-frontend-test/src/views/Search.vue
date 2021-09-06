@@ -1,5 +1,8 @@
 <template>
-  <div class="search">
+  <form
+    class="search"
+    @submit.prevent="filterSearch"
+  >
     <div class="search__prepend">
       <img src="../assets/search.svg" />
     </div>
@@ -7,11 +10,10 @@
       type="text"
       class="search__input"
       v-model="search"
-      @keyup.enter.prevent="filterSearch"
       placeholder="Filter by name"
       aria-placeholder="Filter by name"
     >
-  </div>
+  </form>
 </template>
 
 <script>
@@ -44,13 +46,12 @@ export default {
 $warm-grey: #999999;
 $pale-grey: #e1e4e8;
 
-div.search {
+.search {
   display: flex;
   align-items: center;
-  margin: 30px;
+  margin: 30px 30px 10px 30px;
   border-radius: 7px;
   border: 2px solid $pale-grey;
-  max-width: 400px;
   .search__prepend {
     display: flex;
     justify-content: center;
@@ -71,6 +72,17 @@ div.search {
     border: none;
     border-radius: 5px;
     outline: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .search {
+    max-width: 450px;
+  }
+}
+@media (min-width: 501px) {
+  .search {
+    max-width: 310px;
   }
 }
 </style>

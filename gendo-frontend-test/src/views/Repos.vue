@@ -1,11 +1,13 @@
 <template>
   <section>
     <Search />
-    <ListRepos />
+    <ListRepos v-if="this.$store.state.repos" />
   </section>
 </template>
 
 <script>
+
+import { mapActions } from 'vuex'
 
 import Search from './Search.vue'
 import ListRepos from './ListRepos.vue'
@@ -15,11 +17,16 @@ export default {
   components: {
     Search,
     ListRepos
+  },
+  methods: {
+    ...mapActions([
+      'setRepos',
+      'setStarred'
+    ])
+  },
+  created () {
+    this.setRepos()
+    this.setStarred()
   }
 }
 </script>
-
-<style lang="scss">
-$warm-grey: #999999;
-$pale-grey: #e1e4e8;
-</style>
