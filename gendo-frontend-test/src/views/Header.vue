@@ -16,8 +16,6 @@ export default {
 </script>
 
 <style lang="scss">
-$warm-grey: #999999;
-
 header.header {
   width: 100%;
   display: flex;

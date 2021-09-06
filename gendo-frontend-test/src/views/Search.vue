@@ -43,7 +43,6 @@ export default {
 </script>
 
 <style lang="scss">
-$warm-grey: #999999;
 $pale-grey: #e1e4e8;
 
 .search {
